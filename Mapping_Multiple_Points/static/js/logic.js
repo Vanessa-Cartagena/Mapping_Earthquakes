@@ -2,10 +2,6 @@
 console.log("working");
 
 // Create the map object with a center and zoom level.
-<<<<<<< HEAD
-=======
-// let map = L.map('mapid').setView([40.7, -94.5], 4);
->>>>>>> Mapping_Multiple_Points
 let map = L.map('mapid').setView([40.7, -94.5], 4);
 
 // Get data from cities.js
@@ -14,7 +10,7 @@ let cityData = cities;
 // Loop through the cities array and create one marker for each city.
 cities.forEach(function(city) {
     console.log(city)
-<<<<<<< HEAD
+
 // Could comment out the next line to get rid of the blue markers
     L.marker(city.location).addTo(map);
    });
@@ -33,12 +29,10 @@ let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/t
 // Loop through the cities array and create one marker for each city.
 // Skill Drill 12.4.2 edit the lineweight, add the color orange, radius decreased by 200K
 // and dark map
-=======
-    L.marker(city.location).addTo(map);
-});
+// L.marker(city.location).addTo(map);
+// });
 
 // Loop through the cities array and create one marker for each city.
->>>>>>> Mapping_Multiple_Points
 cityData.forEach(function(city) {
     console.log(city)
     L.circleMarker(city.location, {
@@ -49,16 +43,6 @@ cityData.forEach(function(city) {
     .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.population.toLocaleString() + "</h3>")
   .addTo(map);
 });
-
-<<<<<<< HEAD
-=======
-// We create the tile layer that will be the background of our map.
-let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    accessToken: API_KEY
-});
->>>>>>> Mapping_Multiple_Points
 
 // Then we add our 'graymap' tile layer to the map.
 streets.addTo(map);
